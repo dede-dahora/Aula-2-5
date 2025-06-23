@@ -1,44 +1,42 @@
-const carro = {
-  marca: "Toyota",
-  modelo: "Corolla",
-  ano: 2022,
-  cor: "prata",
-  ligado: false,
+const livro = {
+  titulo: "O Senhor dos Anéis",
+  autor: "J.R.R. Tolkien",
+  ano: 1954,
+  emprestado: false,
 
-  ligar: function() {
-    if (!this.ligado) {
-      this.ligado = true;
-      console.log("O carro foi ligado. Vrum vrum!");
+  emprestar: function() {
+    if (!this.emprestado) {
+      this.emprestado = true;
+      console.log("O livro foi emprestado.");
     } else {
-      console.log("O carro já está ligado.");
+      console.log("O livro já está emprestado.");
     }
   },
 
-  desligar: function() {
-    if (this.ligado) {
-      this.ligado = false;
-      console.log("O carro foi desligado.");
+  devolver: function() {
+    if (this.emprestado) {
+      this.emprestado = false;
+      console.log("O livro foi devolvido.");
     } else {
-      console.log("O carro já está desligado.");
+      console.log("O livro já está na biblioteca.");
     }
   },
 
   detalhes: function() {
     console.log(
-      `Marca: ${this.marca}\nModelo: ${this.modelo}\nAno: ${this.ano}\nCor: ${this.cor}`
+      `Título: ${this.titulo}\nAutor: ${this.autor}\nAno: ${this.ano}`
     );
   }
 };
 
-console.log("--- Informações do Carro ---");
-console.log("--- Detalhes do Carro ---");
-carro.detalhes();
+console.log("--- Detalhes do Livro ---");
+livro.detalhes();
 
-console.log("\n--- Tentando ligar o carro ---");
-carro.ligar();
+console.log("\n--- Tentando emprestar o livro ---");
+livro.emprestar();
 
-console.log("\n--- Tentando ligar novamente ---");
-carro.ligar();
+console.log("\n--- Tentando emprestar novamente ---");
+livro.emprestar();
 
-console.log("\n--- Desligando o carro ---");
-carro.desligar();
+console.log("\n--- Devolvendo o livro ---");
+livro.devolver();
